@@ -1,27 +1,23 @@
-require "openssl"
-require 'net/http'
-
-require 'json'
-
-puts Hook.datastore
+# require "openssl"
+# require 'net/http'
 
 
-# chat_id = Hook['params']['message']['chat']['id']
-# user = Hook['params']['message']['from']['first_name']
-# text = Hook['params']['message']['text']
+chat_id = Hook['params']['message']['chat']['id']
+user = Hook['params']['message']['from']['first_name']
+text = Hook['params']['message']['text']
 
 # # DO STUFF HERE
 
+# require 'json'
 # text = Hook['params'].to_json
 
+require 'telegramAPI'
 
+token = Hook['env']['autonomous_war_domination_robot_token']
 
+api = TelegramAPI.new token
 
-
-
-
-
-
+api.sendMessage(chat_id, text)
 
 # token = Hook['env']['autonomous_war_domination_robot_token']
 # url = 'https://api.telegram.org/bot' + token + '/sendMessage'
