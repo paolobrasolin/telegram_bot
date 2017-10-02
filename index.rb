@@ -1,6 +1,9 @@
+require 'openssl'
+OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 require 'net/http'
 
-OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
 
 token = Hook['env']['autonomous_war_domination_robot_token']
 
