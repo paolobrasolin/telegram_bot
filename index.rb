@@ -13,9 +13,9 @@ uri = URI url
 
 uri.query = URI.encode_www_form payload
 
-res = Net::HTTP.get_response(uri)
+# res = Net::HTTP.get_response(uri)
 
-puts res.body #if res.is_a?(Net::HTTPSuccess)
+# puts res.body #if res.is_a?(Net::HTTPSuccess)
 
 
 puts "Online!"
