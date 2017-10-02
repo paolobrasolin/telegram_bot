@@ -12,7 +12,8 @@ text = 'YO' # Hook['params']['message']['text']
 
 # text = Hook['params'].to_json
 
-require 'telegramAPI'
+require_relative 'telegramAPI'
+
 # token = Hook['env']['autonomous_war_domination_robot_token']
 # api = TelegramAPI.new token
 # api.sendMessage(chat_id, text)
