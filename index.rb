@@ -14,7 +14,16 @@ text = 'YO' # Hook['params']['message']['text']
 # text = Hook['params'].to_json
 
 
-puts Gem.list
+begin
+  require 'progressbar'
+rescue LoadError => e
+  puts "exception .. installing with gem"
+  h = system 'gem install progressbar'
+  puts "gem installed #{h}"
+  Gem.clear_paths
+  require 'progressbar'
+end
+
 
 # require 'telegramAPI'
 # token = Hook['env']['autonomous_war_domination_robot_token']
