@@ -27,7 +27,7 @@ http = Net::HTTP.start uri.host, uri.port,
                        use_ssl: uri.scheme == 'https',
                        verify_mode: OpenSSL::SSL::VERIFY_NONE
 
-# request = Net::HTTP::Get.new uri
+request = Net::HTTP::Get.new uri
 
 # response = http.request request
 
