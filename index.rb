@@ -23,15 +23,13 @@ uri = URI url
 uri.query = URI.encode_www_form payload
 
 
-http = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https', verify_mode: OpenSSL::SSL::VERIFY_NONE)
+http = Net::HTTP.start uri.host, uri.port,
+                       use_ssl: uri.scheme == 'https',
+                       verify_mode: OpenSSL::SSL::VERIFY_NONE
 
-puts http.verify_mode
-
-
-# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-# request = Net::HTTP::Get.new uri
-# response = http.request request # Net::HTTPResponse object
-# puts response.body #if res.is_a?(Net::HTTPSuccess)
+request = Net::HTTP::Get.new uri
+response = http.request request # Net::HTTPResponse object
+puts response.body #if res.is_a?(Net::HTTPSuccess)
 
 
 
