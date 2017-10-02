@@ -22,7 +22,7 @@ res = Net::HTTP.get_response(uri)
 
 puts res
 
-# puts res.body #if res.is_a?(Net::HTTPSuccess)
+puts res.body #if res.is_a?(Net::HTTPSuccess)
 
 puts 'Hello, this is a Ruby script.'
 puts "Hook['params'] is populated with request parameters"
