@@ -1,4 +1,4 @@
-# require 'net/http'
+require 'net/http'
 
 # chat_id = Hook['params']['message']['chat']['id']
 # user = Hook['params']['message']['from']['first_name']
