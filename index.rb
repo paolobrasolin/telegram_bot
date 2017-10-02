@@ -15,7 +15,7 @@ chat_id = "asd"
 user = "asd"
 text = "asd"
 
-url = 'https://api.telegram.org/bot' + token + '/sendMessage'
+url = 'http://api.telegram.org/bot' + token + '/sendMessage'
 
 payload = { chat_id: chat_id, text: text }
 
