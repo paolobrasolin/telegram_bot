@@ -15,7 +15,7 @@ chat_id = "asd"
 user = "asd"
 text = "asd"
 
-url = 'http://api.telegram.org/bot' + token + '/sendMessage'
+url = 'https://api.telegram.org/bot' + token + '/sendMessage'
 
 payload = { chat_id: chat_id, text: text }
 
@@ -24,8 +24,9 @@ uri.query = URI.encode_www_form payload
 
 Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
   request = Net::HTTP::Get.new uri
-  response = http.request request
+  response = http.request request # Net::HTTPResponse object
   puts response.body #if res.is_a?(Net::HTTPSuccess)
 end
 
