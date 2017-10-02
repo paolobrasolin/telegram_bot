@@ -1,9 +1,9 @@
 require 'net/http'
 
-chat_id = Hook['params']['message']['chat']['id']
-user = Hook['params']['message']['from']['first_name']
-text = Hook['params']['message']['text']
-token = Hook['env']['autonomous_war_domination_robot_token']
+# chat_id = Hook['params']['message']['chat']['id']
+# user = Hook['params']['message']['from']['first_name']
+# text = Hook['params']['message']['text']
+# token = Hook['env']['autonomous_war_domination_robot_token']
 
 # url = 'https://api.telegram.org/bot' + token + '/sendMessage'
 
