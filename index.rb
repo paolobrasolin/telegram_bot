@@ -11,6 +11,8 @@ text = Hook['params']['message']['text']
 
 text = Hook['params'].to_json
 
+puts Hook.datastore
+
 
 
 
