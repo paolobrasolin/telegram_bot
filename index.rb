@@ -2,6 +2,8 @@ require "openssl"
 require 'net/http'
 
 
+puts "YO!" and return unless Hook['params']['message']
+
 chat_id = Hook['params']['message']['chat']['id']
 user = Hook['params']['message']['from']['first_name']
 text = Hook['params']['message']['text']
