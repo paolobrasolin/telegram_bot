@@ -14,11 +14,11 @@ url = 'https://api.telegram.org/bot' + token + '/sendMessage'
 
 payload = { chat_id: chat_id, text: text }
 
-uri = URI url
+uri = URI.parse url
 
 uri.query = URI.encode_www_form payload
 
-res = Net::HTTP.get_response(uri)
+res = Net::HTTP.get_response uri
 
 puts res
 
