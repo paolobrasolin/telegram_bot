@@ -5,13 +5,13 @@ user = Hook['params']['message']['from']['first_name']
 text = Hook['params']['message']['text']
 token = Hook['env']['autonomous_war_domination_robot_token']
 
-url = 'https://api.telegram.org/bot' + token + '/sendMessage'
+# url = 'https://api.telegram.org/bot' + token + '/sendMessage'
 
-payload = { chat_id: chat_id, text: text }
+# payload = { chat_id: chat_id, text: text }
 
-uri = URI url
+# uri = URI url
 
-uri.query = URI.encode_www_form payload
+# uri.query = URI.encode_www_form payload
 
 # res = Net::HTTP.get_response(uri)
 
