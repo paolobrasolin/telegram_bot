@@ -1,6 +1,6 @@
 require 'net/http'
 
-# chat_id = Hook['params']['message']['chat']['id']
+chat_id = Hook.dig 'params', 'message', 'chat', 'id'
 # user = Hook['params']['message']['from']['first_name']
 # text = Hook['params']['message']['text']
 # token = Hook['env']['autonomous_war_domination_robot_token']
@@ -17,7 +17,7 @@ require 'net/http'
 
 # puts res.body #if res.is_a?(Net::HTTPSuccess)
 
-puts Hook['env'].class
+puts chat_id
 
 puts 'Hello, this is a Ruby script.'
 puts "Hook['params'] is populated with request parameters"
