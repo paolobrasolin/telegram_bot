@@ -17,7 +17,8 @@ payload = { chat_id: chat_id, text: text }
 uri = URI.parse url
 http = Net::HTTP.new uri.host, uri.port
 http.use_ssl = true
-response = http.get uri
+
+response = http.get uri.request_uri
 
 puts response.body #if res.is_a?(Net::HTTPSuccess)
 
