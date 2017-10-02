@@ -22,7 +22,8 @@ payload = { chat_id: chat_id, text: text }
 uri = URI url
 uri.query = URI.encode_www_form payload
 
-http = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https')
+
+http = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https', verify_mode: OpenSSL::SSL::VERIFY_NONE)
 
 puts http.verify_mode
 
