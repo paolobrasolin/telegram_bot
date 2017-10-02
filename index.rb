@@ -18,8 +18,6 @@ token = Hook['env']['autonomous_war_domination_robot_token']
 
 # puts res.body #if res.is_a?(Net::HTTPSuccess)
 
-puts Hook['env'].class
-
 puts 'Hello, this is a Ruby script.'
 puts "Hook['params'] is populated with request parameters"
 puts Hook['params']
