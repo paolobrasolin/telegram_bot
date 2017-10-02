@@ -29,9 +29,9 @@ http = Net::HTTP.start uri.host, uri.port,
 
 request = Net::HTTP::Get.new uri
 
-response = http.request request # Net::HTTPResponse object
+# response = http.request request # Net::HTTPResponse object
 
-puts response
+# puts response
 
 
 
