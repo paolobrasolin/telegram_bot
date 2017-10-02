@@ -14,13 +14,16 @@ url = 'https://api.telegram.org/bot' + token + '/sendMessage'
 
 payload = { chat_id: chat_id, text: text }
 
-uri = URI.parse url
-http = Net::HTTP.new uri.host, uri.port
-http.use_ssl = true
+uri = URI url
+uri.query = URI.encode_www_form payload
 
-response = http.get uri.request_uri
+Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
+  request = Net::HTTP::Get.new uri
+  response = http.request request # Net::HTTPResponse object
+  puts response.body #if res.is_a?(Net::HTTPSuccess)
+end
 
-puts response.body #if res.is_a?(Net::HTTPSuccess)
+
 
 puts 'Hello, this is a Ruby script.'
 puts "Hook['params'] is populated with request parameters"
