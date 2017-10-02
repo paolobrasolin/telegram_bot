@@ -3,8 +3,6 @@ require 'net/http'
 
 require 'json'
 
-puts Hook.datastore
-
 
 chat_id = Hook['params']['message']['chat']['id']
 user = Hook['params']['message']['from']['first_name']
