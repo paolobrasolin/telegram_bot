@@ -4,7 +4,6 @@ require 'net/http'
 
 require 'json'
 
-
 chat_id = '238955633' # Hook['params']['message']['chat']['id']
 # user = Hook['params']['message']['from']['first_name']
 text = 'YO' # Hook['params']['message']['text']
@@ -13,27 +12,19 @@ text = 'YO' # Hook['params']['message']['text']
 
 # text = Hook['params'].to_json
 
-
 begin
   require 'progressbar'
 rescue LoadError => e
   puts "exception .. installing with gem"
-  h = system 'gem install progressbar'
-  puts "gem installed #{h}"
+  puts `gem install progressbar`
   Gem.clear_paths
   require 'progressbar'
 end
-
 
 # require 'telegramAPI'
 # token = Hook['env']['autonomous_war_domination_robot_token']
 # api = TelegramAPI.new token
 # api.sendMessage(chat_id, text)
-
-
-
-
-
 
 token = Hook['env']['autonomous_war_domination_robot_token']
 url = 'https://api.telegram.org/bot' + token + '/sendMessage'
